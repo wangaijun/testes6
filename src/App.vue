@@ -7,17 +7,16 @@
 
 <script>
 import { moment } from "moment";
-import { a } from "./components/test.js";
+import { a, b, c, my } from "./components/test.js";
 export default {
   name:'App',
   methods: {
     f () {
-      console.log('object');
+     
     }
   },
   mounted () {
     // this.f()
-    a.f()
   }
 }
 </script>

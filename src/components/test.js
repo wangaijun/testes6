@@ -10,4 +10,8 @@ export function my() {
 
 export const a = new A()
 
+export let b = new A()
+
+export var c = new A()
+
 
