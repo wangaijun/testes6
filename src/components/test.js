@@ -6,6 +6,7 @@ class A {
         } catch (e) {
             console.log(e.message);
         }
+        my(1,2)
     }
     newf() {
         console.log('object');
