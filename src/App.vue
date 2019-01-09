@@ -7,7 +7,7 @@
 
 <script>
 import { moment } from "moment";
-import { a, b, c, my } from "./components/test.js";
+import { a, b, c, my, default as e} from "./components/test.js";
 export default {
   name:'App',
   methods: {
@@ -17,6 +17,7 @@ export default {
   },
   mounted () {
     // this.f()
+    console.log(e == a);
   }
 }
 </script>

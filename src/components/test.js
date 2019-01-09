@@ -4,14 +4,16 @@ class A {
     }
 }
 
-export function my() {
+function my() {
     console.log('my');
 }
 
-export const a = new A()
+const a = new A()
 
-export let b = new A()
+let b = new A()
 
-export var c = new A()
+var c = new A()
+
+export {a, b, c, my, a as default}
 
 
