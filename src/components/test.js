@@ -4,12 +4,8 @@ class A {
     }
 }
 
-export function my(p2, p1) {
-    try {
-        console.log('my');
-    } catch (e) {
-        console.log(e.message);
-    }
+export function my() {
+    console.log('my');
 }
 
 export const a = new A()
