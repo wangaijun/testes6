@@ -7,19 +7,48 @@
 
 <script>
 import { moment } from "moment";
-import { a, b, c, my, default as e} from "./components/test.js";
+import { a, b, c, my, default as e } from "./components/test.js";
 export default {
-  name:'App',
+  name: "App",
   methods: {
-    f () {
-     
-    }
+    f(a = 1, b = 2) {
+      console.log(`a = ${a}`);
+      console.log(`b = ${b}`);
+    },
+
+    
   },
-  mounted () {
-    // this.f()
-    console.log(e == a);
+  mounted() {
+    this.f();
+
+    let r1 = null
+    let r2 = null
+    let f = function (url) {
+      return new Promise((resolve, reject) => {
+      console.log(`get data from ${url}`);
+      // console.log("s: resolve");
+      // console.log("f: reject");
+      let msg = "hello,world";
+      let code = '0'
+      resolve({code, msg});
+      // reject(new Error('Failed to fulfill Promise'))
+      })
+      .then(r => {
+        if(!r1) r1 = r
+        else r2 = r
+      })
+      .catch(e => console.log(e));
+    }
+    let urls = [
+      'http://www.baidu.com',
+      'http://www.sina.com'
+    ]
+    let urlPromisses = urls.map(f)
+    Promise.all(urlPromisses)
+    .then(r => console.log(r1, r2))
+    .catch(e => console.log(e))
   }
-}
+};
 </script>
 
 
